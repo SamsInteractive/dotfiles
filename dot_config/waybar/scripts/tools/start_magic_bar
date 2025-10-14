@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+
+~/.config/waybar/scripts/magic_bar
+while true
+do
+	out=$(cat ~/.config/waybar/state/magic_out.txt)
+	echo "$out"
+	sleep 0.5
+done

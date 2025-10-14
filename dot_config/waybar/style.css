@@ -1,0 +1,188 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "Caskaydia Cove Nerd Font";
+    font-weight: bold;
+    font-size: 16px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(21, 18, 27, 0);
+    color: #cdd6f4;
+}
+
+
+
+tooltip * {
+    background: transparent;
+}
+
+
+tooltip {
+	background: #1e1e2e;
+	border-radius: 18px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #cba6f7;
+}
+
+
+tooltip label {
+    color: #cdd6f4;
+    padding: 0 5px;
+	border-radius: 18px;
+    background: transparent;
+}
+
+
+
+#custom-launcher,
+#clock,
+#battery,
+#pulseaudio,
+#temperature,
+#workspaces,
+#network, 
+#bluetooth, 
+#backlight {
+    background: #1e1e2e;
+    opacity: 0.8;
+    margin: 0px;
+	padding: 5px 10px;
+	margin-top: 7px;
+    border: 0;
+    border-color: #907aa9;
+    border-style: solid;
+}
+
+
+#custom-launcher,
+#workspaces,
+#clock {
+	border-radius: 18px;
+}
+
+
+#custom-launcher,
+#workspaces {
+	margin-left: 10px
+}
+
+
+#clock,
+#battery,
+#bluetooth {
+	margin-right: 10px
+}
+
+
+#pulseaudio,
+#backlight {
+	border-radius: 18px 0 0 18px;
+}
+
+
+#bluetooth,
+#battery {
+	border-radius: 0 18px 18px 0;
+}
+
+
+#custom-launcher,
+#pulseaudio,
+#backlight,
+#clock {
+	padding-left: 15px;
+}
+
+
+#custom-launcher,
+#bluetooth,
+#battery,
+#clock {
+	padding-right: 15px
+}
+
+/*
+#network {
+	padding-right: 5px;
+	padding-left: 5px;
+}*/
+
+
+#workspaces button {
+    padding: 5px;
+    color: #313244;
+}
+
+
+#workspaces button.active {
+    color: #cdd6f4;
+}
+
+
+#workspaces button.focused {
+    color: #cdd6f4;
+    background: #eba0ac;
+}
+
+
+#workspaces button.urgent {
+    color: #11111b;
+    background: #a6e3a1;
+    border-radius: 18px;
+}
+
+
+#workspaces button:hover {
+    background: #eb6f92;
+    color: #232136;
+    border-radius: 18px;
+}
+
+
+
+#custom-launcher {
+    color: #1793d1;
+}
+
+#clock {
+    color: #f2cdcd;
+}
+
+#battery {
+    color: #1793d1;
+}
+
+#network.ethernet {
+    color: #a6e3a1; 
+}
+
+#network.disabled {
+    color: red; 
+}
+
+#network.wifi {
+    color: #a6e3a1;
+}
+
+#bluetooth.on, #bluetooth.connected {
+    color: #3e8fb0;
+}
+
+#bluetooth.discovering {
+    color: yellow; 
+}
+
+#battery.critical {
+    color: red;
+}
+
+#battery.warning {
+    color: #ea9d34;
+}
+
+#pulseaudio {
+    color: #1793d1;
+}

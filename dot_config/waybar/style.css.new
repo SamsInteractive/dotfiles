@@ -1,0 +1,185 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "Caskaydia Cove Nerd Font";
+    font-weight: bold;
+    font-size: 16px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(21, 18, 27, 0);
+    color: #cdd6f4;
+}
+
+tooltip * {
+    background: transparent;
+}
+
+tooltip {
+    background: #1e1e2e;
+    border-radius: 18px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #cba6f7;
+    padding: 6px 10px;
+}
+
+
+tooltip label {
+    color: #cdd6f4;
+	padding: 0 5px;
+    border-radius: 18px;
+    background: transparent;
+}
+
+
+#workspaces button {
+    padding: 5px;
+    color: #313244;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+
+
+#workspaces button.active {
+    color: #cdd6f4;
+}
+
+
+#workspaces button.focused {
+    color: #cdd6f4;
+    background: #eba0ac;
+}
+
+
+#workspaces button.urgent {
+    color: #11111b;
+    background: #a6e3a1;
+    border-radius: 18px;
+}
+
+
+#workspaces button:hover {
+    background: #eb6f92;
+    color: #232136;
+    border-radius: 18px;
+}
+
+
+#custom-launcher,
+#clock,
+#battery,
+#pulseaudio,
+#temperature,
+#workspaces,
+#network, 
+#bluetooth, 
+#backlight {
+    background: #1e1e2e;
+    opacity: 0.8;
+    padding: 0px 10px;
+    margin: 3px 0px;
+    margin-top: 10px;
+    border: 0;
+    border-color: #907aa9;
+    border-style: solid;
+}
+
+
+#pulseaudio, #backlight {
+    border-radius: 18px 0px 0px 18px;
+	border-right: 0px;
+}
+
+
+#bluetooth, #battery {
+	border-radius: 0px 18px 18px 0px;
+	border-left: 0px;
+	padding-right: 20px;
+}
+
+
+#clock, #custom-launcher {
+	border-radius: 18px 18px 18px 18px;
+	margin-left: 10px;
+	margin-right: 10px;
+	padding: 0 15px;
+}
+
+
+#workspaces {
+	border-radius: 18px;
+	padding: 0 10px;
+}
+
+#custom-launcher {
+    color: #1793d1;
+}
+
+
+#clock {
+	color: #f2cdcd;
+}
+
+
+#temperature {
+    color: #f6c177;
+}
+
+
+#battery {
+    border-radius: 0px 18px 18px 0px;
+    margin-right: 10px;
+    color: #1793d1;
+}
+
+
+#window {
+    margin-right: 20px;
+}
+
+
+#pulseaudio {
+    color: #1793d1;
+    border-right: 0px;
+}
+
+#battery {
+    color: #8fb6ab;
+}
+
+
+#temperature.critical {
+    color: #e92d4d;
+}
+
+#network.ethernet {
+    color: #a6e3a1; 
+}
+
+#network.disabled {
+    color: red; 
+}
+
+#network.wifi {
+    color: #a6e3a1;
+}
+
+
+#bluetooth.on, #bluetooth.connected {
+    color: #3e8fb0;
+}
+
+#bluetooth.discovering {
+    color: yellow; 
+}
+
+
+#battery.critical {
+    color: red;
+}
+
+#battery.warning {
+    color: #ea9d34;
+}

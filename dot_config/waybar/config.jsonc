@@ -1,0 +1,140 @@
+// ---------- Waybar ----------
+{
+	//"spacing": 5,
+
+	// ----- Margin -----
+//	"margin-top": 5,
+//	"margin-left": 10,
+//	"margin-right": 10,
+//	"margin-bottom": 0,
+//	"height": 45,
+
+	// ----- Module Positioning -----
+	"modules-left": [
+		"custom/launcher",
+		"hyprland/workspaces"
+	],
+
+	"modules-center": [
+	
+	],
+
+	"modules-right": [
+//		"temperature",
+		"pulseaudio",
+		"network",
+		"bluetooth",
+		"backlight",
+		"battery",
+		"clock"
+	],
+
+
+
+	// ----- Custom Modules -----
+	"custom/launcher": {
+		"format": "󰣇  Arch",
+		"on-click": "sleep 0.1s; ~/.local/bin/rofi-toggle",
+		"tooltip": false
+	},
+
+//	"custom/magic_bar": {
+//	
+//	}
+
+
+	// ----- Modules -----
+	"hyprland/workspaces": {
+		"format": "{icon}",
+		"format-active": "{icon}",
+		"on-click": "activate"
+	},
+
+
+	"clock": {
+	    "format": " {:%I:%M %p}",
+	    "format-alt": " {:%a,%b %d}",
+		"tooltip": false
+	},
+
+
+	"battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "{icon}",
+        "format-charging": " {capacity}% ",
+        "format-plugged": " {capacity}% ",
+        "format-alt": "{icon} {capacity}% ",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+
+
+	"backlight": {
+//		"device": "intel_backlight",
+        "format": "{percent}% {icon}",
+        "format-icons": ["󰃞", "󰃟", "󰃠"],
+        "on-scroll-up": "brightnessctl set 1%+",
+        "on-scroll-down": "brightnessctl set 1%-"
+    },
+
+
+	"pulseaudio": {
+        "format": "{icon}",
+        "format-muted": "",
+        "on-click": "pavucontrol",
+//        "on-click": "pamixer -t",
+//        "on-scroll-up": "pamixer -i 5",
+//        "on-scroll-down": "pamixer -d 5",
+//        "scroll-step": 5,
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        }
+    },
+
+
+	"network": {
+        "on-click": "kitty nmtui", 
+        "format-icons": ["󰤯"," 󰤟"," 󰤢"," 󰤥"," 󰤨"],
+        "format": "{icon}",
+        "format-wifi": "{icon}",
+        "format-ethernet" : "🖧",
+        "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+        "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+        "tooltip-format-disconnected": "Disconnected",
+        "interval": 3,
+        "nospacing": 1,
+        "tooltip-format": "{essid} - {ifname} via {gwaddr}",
+        "format-linked": "{ifname} (No IP)", 
+        "format-disconnected": " 󰤠 "
+    },
+
+
+	"bluetooth": {
+        "format": "",
+        "format-connected": " {device_alias}",
+        "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+        "on-click": "rfkill toggle bluetooth" 
+    },
+
+
+	"temperature": {
+        "thermal-zone": 0,
+        "format": "  {temperatureC}°C",
+        "critical-threshold": 80,
+        "format-critical": " {temperatureC}°C",
+        "on-click": "kitty btop"
+    }
+}
