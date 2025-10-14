@@ -108,10 +108,10 @@ llt() {
 
 # --- BAT ---
 cat() {
-	if [[ $1 == "p" ]] then
-		bat
+	if [[ $1 == "p" ]]; then
+		bat --paging=never "$2"
 	else
-		bat --paging=never
+		bat "$1"
 	fi
 }
 
