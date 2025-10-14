@@ -146,7 +146,7 @@ run_fastfetch() {
                 fastfetch -c ~/.config/fastfetch/pycharm.jsonc
         else
 		# Changes fastfetch preset based on terminal size
-                if [ $(tput cols) -ge 106 ]; then
+                if [ $(tput cols) -ge 106 ] && [ $(tput lines) -ge 22 ]; then
 			fastfetch
 		else
 			fastfetch -c ~/.config/fastfetch/small.jsonc
