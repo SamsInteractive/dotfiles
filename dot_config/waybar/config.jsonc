@@ -103,7 +103,7 @@
 
 	"network": {
         "on-click": "kitty nmtui", 
-        "format-icons": ["󰤯"," 󰤟"," 󰤢"," 󰤥"," 󰤨"],
+        "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
         "format": "{icon}",
         "format-wifi": "{icon}",
         "format-ethernet" : "🖧",
@@ -114,7 +114,7 @@
         "nospacing": 1,
         "tooltip-format": "{essid} - {ifname} via {gwaddr}",
         "format-linked": "{ifname} (No IP)", 
-        "format-disconnected": " 󰤠 "
+        "format-disconnected": "󰤠 "
     },
 
 
