@@ -61,34 +61,35 @@
 	"battery": {
         "states": {
             "good": 95,
-            "warning": 30,
-            "critical": 20
+            "warning": 25,
+            "critical": 10
         },
         "format": "{icon}",
-        "format-charging": " {capacity}% ",
-        "format-plugged": " {capacity}% ",
-        "format-alt": "{icon} {capacity}% ",
-        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{icon} {capacity}%",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+		"tooltip-format": "{timeTo}\n@ {power}W"
     },
 
 
 	"backlight": {
-//		"device": "intel_backlight",
-        "format": "{percent}% {icon}",
+        "format": "{icon}",
+		"format-alt": "{icon} {percent}%",
         "format-icons": ["󰃞", "󰃟", "󰃠"],
+		"scroll-step": 0.1,
         "on-scroll-up": "brightnessctl set 1%+",
-        "on-scroll-down": "brightnessctl set 1%-"
+        "on-scroll-down": "brightnessctl set 1%-",
+		"tooltip-format": "{percent}% brightness"
     },
 
 
 	"pulseaudio": {
         "format": "{icon}",
+		"format-alt": "{icon} {volume}%",
+		"tooltip-format": "Volume: {volume}%\n{desc}",
         "format-muted": "",
-        "on-click": "pavucontrol",
-//        "on-click": "pamixer -t",
-//        "on-scroll-up": "pamixer -i 5",
-//        "on-scroll-down": "pamixer -d 5",
-//        "scroll-step": 5,
+		"ignored-sinks": ["Easy Effects Sink"],
         "format-icons": {
             "headphone": "",
             "hands-free": "",
