@@ -133,7 +133,7 @@
         {
             "type": "custom",
             "key": " {#green}│ 󰍹  Display   │{$4}│{#keys}{$2}",
-            "format": "2560x1440 @ 180 Hz (27-inch)"
+            "format": "3840x2160 @ 240 Hz (27-inch)"
         },
        // {
            // "type": "gpu",

@@ -191,7 +191,7 @@ error-message {
 /* --- real transparent window --- */
 window {
   transparency: "real";                 /* needs a compositor (Hyprland) */
-  background-color: rgba(17,17,17,0.10);/* the ONLY tint; change 0.50 as you like */
+  background-color: rgba(17,17,17,0.20);/* the ONLY tint; change 0.50 as you like */
   border: 0px;
 }
 
