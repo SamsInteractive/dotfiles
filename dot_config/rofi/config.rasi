@@ -21,9 +21,6 @@ window {
 }
 
 mainbox {
-    enabled:                     true;
-    spacing:                     0px;
-    border-radius:               0px 0px 0px 0px;
     orientation:                 horizontal;
     children:                    [ "imagebox", "listbox" ];
     background-color:            #00000003;
@@ -50,23 +47,20 @@ dummy {
 }
 
 inputbar {
-    enabled:                     true;
     spacing:                     10px;
     padding:                     15px;
     border-radius:               10px;
-    background-color:		     @on-primary;
+    background-color:		     transparent;
     text-color:			         @search;
     children:                    [ "textbox-prompt-colon", "entry" ];
 }
 textbox-prompt-colon {
-    enabled:                     true;
     expand:                      false;
     str:                         "  ";
     background-color:            inherit;
     text-color:                  @search;
 }
 entry {
-    enabled:                     true;
     background-color:            inherit;
     text-color:                  inherit;
     cursor:                      text;
@@ -75,10 +69,9 @@ entry {
 }
 
 mode-switcher{
-    enabled:                     true;
     spacing:                     20px;
     background-color:            transparent;
-    text-color:                  @primary-fixed;
+    text-color:                  #c4a8ff;
 }
 button {
     padding:                     15px;
@@ -93,25 +86,19 @@ button selected {
 }
 
 listview {
-    enabled:                     true;
     columns:                     1;
     lines:                       8;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
     layout:                      vertical;
-    reverse:                     false;
-    fixed-height:                true;
-    fixed-columns:               true;
 
     spacing:                     10px;
     background-color:            transparent;
     text-color:                  @on-surface;
-    cursor:                      "default";
 }
 
 element {
-    enabled:                     true;
     spacing:                     15px;
     padding:                     8px;
     border-radius:               10px;
