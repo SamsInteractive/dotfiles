@@ -115,8 +115,8 @@ element normal.urgent {
     text-color:                  @on-surface;
 }
 element normal.active {
-    background-color:            @primary;
-    text-color:                  @on-surface;
+    background-color:            inherit;
+    text-color:                  @primary;
 }
 element selected.normal {
     background-color:            @primary;
@@ -160,10 +160,4 @@ error-message {
     border-radius:               20px;
     background-color:            @on-primary;
     text-color:                  @on-surface;
-}
-
-
-window {
-  transparency: "real";
-  border: 0px;
 }
