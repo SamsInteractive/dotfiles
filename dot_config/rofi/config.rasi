@@ -5,7 +5,8 @@ configuration {
 	display-drun: " ";
 	display-window: " ";
 	drun-display-format: "{icon} {name}";
-	matching: "prefix";
+	matching: "normal";
+	drun-match-fields: "name,generic,keywords";
 	font: "CaskaydiaCove NF SemiBold 13";
 	show-icons: true;
 }

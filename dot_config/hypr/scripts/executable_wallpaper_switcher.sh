@@ -19,7 +19,7 @@ else
         	displayname=$(basename "$wallpaper")
 			absolute="$PWD/${wallpaper#./}"
 			printf '%s\0display\x1f%s\x1ficon\x1f%s\n' "$absolute" "$displayname" "$absolute"
-    	done | rofi -dmenu -p "" -show-icons \
+    	done | rofi -dmenu -i -p "" -show-icons \
 		-theme-str 'element-icon { size: 64px; }'
 	)
 
