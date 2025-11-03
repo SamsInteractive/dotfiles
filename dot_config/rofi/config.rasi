@@ -1,46 +1,32 @@
-@theme "/dev/null"
-@import "style.rasi"
+@theme "style.rasi"
 
 configuration {
-	modi: "drun";
+	modi: "drun,window";
 	display-drun: " ";
 	display-window: " ";
 	drun-display-format: "{icon} {name}";
-	font: "Caskaydia Cove Nerd Font";
+	matching: "prefix";
+	font: "CaskaydiaCove NF SemiBold 13";
 	show-icons: true;
-	icon-theme: "Colloid";
 }
 
 window {
-    /* properties for window widget */
     transparency:                "real";
-    location:                    center;
-    anchor:                      center;
-    fullscreen:                  false;
-    width:                       1000px;
-    x-offset:                    0px;
-    y-offset:                    0px;
+    height:                      23.6em;
+    width:                       48em;
 
-    /* properties for all widgets */
-    enabled:                     true;
-    border:			 none;
-    border-color:		 @secondary-container;
+    border-color:		         @secondary-container;
     border-radius:               15px;
-    cursor:                      "default";
-    background-color:            @on-primary-fixed;
-}
-
-* {
-    background-color: transparent;
+    background-color:            transparent;
 }
 
 mainbox {
     enabled:                     true;
     spacing:                     0px;
     border-radius:               0px 0px 0px 0px;
-    background-color:            transparent;
     orientation:                 horizontal;
     children:                    [ "imagebox", "listbox" ];
+    background-color:            #00000003;
 }
 
 imagebox {
@@ -188,26 +174,9 @@ error-message {
     background-color:            @on-primary;
     text-color:                  @on-surface;
 }
-/* --- real transparent window --- */
+
+
 window {
-  transparency: "real";                 /* needs a compositor (Hyprland) */
-  background-color: rgba(17,17,17,0.20);/* the ONLY tint; change 0.50 as you like */
+  transparency: "real";
   border: 0px;
-}
-
-/* --- make everything else transparent so it doesn't stack --- */
-* {
-  background-color: transparent;
-  border: 0px;
-}
-
-mainbox, listview, listbox, inputbar, prompt, case-indicator,
-scrollbar, element, element-icon, element-text {
-  background-color: transparent;
-  border: 0px;
-}
-
-/* keep selection visible */
-element selected {
-  background-color: rgba(224,222,244,0.12);
 }
