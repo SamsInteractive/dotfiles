@@ -1,14 +1,5 @@
 // ---------- Waybar ----------
 {
-	//"spacing": 5,
-
-	// ----- Margin -----
-//	"margin-top": 5,
-//	"margin-left": 10,
-//	"margin-right": 10,
-//	"margin-bottom": 0,
-//	"height": 45,
-
 	// ----- Module Positioning -----
 	"modules-left": [
 		"custom/launcher",
@@ -87,10 +78,11 @@
 
 
 	"pulseaudio": {
-        "format": "{icon}",
-		"format-alt": "{icon} {volume}%",
+		"format": "{icon} {volume}%",
+        "format-alt": "{icon}",
 		"tooltip-format": "Volume: {volume}%\n{desc}",
         "format-muted": "",
+		"on-click-right": "pavucontrol",
 		"ignored-sinks": ["Easy Effects Sink"],
         "format-icons": {
             "headphone": "",
@@ -129,7 +121,8 @@
         "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
         "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-        "on-click": "rfkill toggle bluetooth" 
+		"on-click": "kitty bluetui",
+        "on-click-right": "rfkill toggle bluetooth"
     },
 
 
