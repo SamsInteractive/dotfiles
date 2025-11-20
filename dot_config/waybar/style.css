@@ -38,6 +38,7 @@ tooltip label {
 
 
 #custom-launcher,
+#custom-magic_bar,
 #clock,
 #battery,
 #pulseaudio,
@@ -58,6 +59,7 @@ tooltip label {
 
 
 #custom-launcher,
+#custom-magic_bar,
 #workspaces,
 #clock {
 	border-radius: 18px;
@@ -90,6 +92,7 @@ tooltip label {
 
 
 #custom-launcher,
+#custom-magic_bar,
 #pulseaudio,
 #backlight,
 #clock {
@@ -98,6 +101,7 @@ tooltip label {
 
 
 #custom-launcher,
+#custom-magic_bar,
 #bluetooth,
 #battery,
 #clock {
@@ -145,6 +149,10 @@ tooltip label {
 
 #custom-launcher {
     color: #1793d1;
+}
+
+#custom-magic_bar {
+	color: #cba6f7;
 }
 
 #clock {

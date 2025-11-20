@@ -1,0 +1,16 @@
+#!/usr/bin/bash
+
+
+player=$(playerctl metadata --format '{{playerName}}')
+
+if [ -n "$player" ]; then
+	title=$(playerctl metadata title)
+	artist=$(playerctl metadata artist)
+	output="${artist:+$artist - }${title}"
+fi
+
+if [[ -z "$output" ]]; then
+	echo '{"text": ""}'
+else
+	echo "{\"text\": \"$output\"}"
+fi

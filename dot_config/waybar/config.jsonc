@@ -7,7 +7,7 @@
 	],
 
 	"modules-center": [
-	
+		"custom/magic_bar"
 	],
 
 	"modules-right": [
@@ -29,9 +29,11 @@
 		"tooltip": false
 	},
 
-//	"custom/magic_bar": {
-//	
-//	}
+	"custom/magic_bar": {
+		"return-type": "json",
+		"interval": 1.5,
+		"exec": "~/.config/waybar/scripts/tools/magic_bar"
+	},
 
 
 	// ----- Modules -----
