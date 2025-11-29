@@ -31,7 +31,7 @@
 
 	"custom/magic_bar": {
 		"return-type": "json",
-		"interval": 1.5,
+		"interval": 2,
 		"exec": "~/.config/waybar/scripts/tools/magic_bar"
 	},
 
