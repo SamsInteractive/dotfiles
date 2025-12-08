@@ -1,0 +1,188 @@
+@import url("colors.css");
+
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "Caskaydia Cove Nerd Font";
+    font-weight: bold;
+    font-size: 16px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: alpha(@surface, 0.0);
+    color: @on_surface;
+}
+
+/* Tooltips */
+
+tooltip * {
+    background: transparent;
+}
+
+tooltip {
+    background: @surface_container_highest;
+    border-radius: 18px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: @primary;
+}
+
+tooltip label {
+    color: @on_surface;
+    padding: 0 5px;
+    border-radius: 18px;
+    background: transparent;
+}
+
+/* Module containers */
+
+#custom-launcher,
+#custom-magic_bar,
+#clock,
+#battery,
+#pulseaudio,
+#temperature,
+#workspaces,
+#network,
+#bluetooth,
+#backlight {
+    background: @surface_container_high;
+    opacity: 0.8;
+    margin: 0px;
+    padding: 5px 10px;
+    margin-top: 7px;
+    border: 0;
+    border-color: @outline_variant;
+    border-style: solid;
+}
+
+
+#custom-launcher,
+#custom-magic_bar,
+#workspaces,
+#clock {
+    border-radius: 18px;
+}
+
+#custom-launcher,
+#workspaces {
+    margin-left: 10px;
+}
+
+#clock,
+#battery,
+#bluetooth {
+    margin-right: 10px;
+}
+
+
+#pulseaudio,
+#backlight {
+    border-radius: 18px 0 0 18px;
+}
+
+#bluetooth,
+#battery {
+    border-radius: 0 18px 18px 0;
+}
+
+
+#custom-launcher,
+#custom-magic_bar,
+#pulseaudio,
+#backlight,
+#clock {
+    padding-left: 15px;
+}
+
+#custom-launcher,
+#custom-magic_bar,
+#bluetooth,
+#battery,
+#clock {
+    padding-right: 15px;
+}
+
+/* Workspaces */
+
+#workspaces button {
+    padding: 5px;
+    color: @on_surface_variant;
+    background: transparent;
+}
+
+#workspaces button.active {
+    color: @on_surface;
+}
+
+#workspaces button.focused {
+    color: @on_surface;
+    background: @primary_container;
+    border-radius: 18px;
+}
+
+#workspaces button.urgent {
+    color: @on_error_container;
+    background: @error_container;
+    border-radius: 18px;
+}
+
+#workspaces button:hover {
+    background: @tertiary_container;
+    color: @on_tertiary_container;
+    border-radius: 18px;
+}
+
+/* Per-module foreground colors */
+
+#custom-launcher {
+    color: @primary;
+}
+
+#custom-magic_bar {
+    color: @tertiary;
+}
+
+#clock {
+    color: @secondary;
+}
+
+#battery {
+    color: @primary;
+}
+
+
+#network.ethernet,
+#network.wifi {
+    color: @secondary;
+}
+
+#network.disabled {
+    color: @error;
+}
+
+
+#bluetooth.on,
+#bluetooth.connected {
+    color: @tertiary;
+}
+
+#bluetooth.discovering {
+    color: @tertiary_container;
+}
+
+
+#battery.critical {
+    color: @error;
+}
+
+#battery.warning {
+    color: @error_container;
+}
+
+
+#pulseaudio {
+    color: @primary;
+}
