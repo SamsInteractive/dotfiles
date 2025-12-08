@@ -4,9 +4,17 @@
 player=$(playerctl metadata --format '{{playerName}}')
 
 if [ -n "$player" ]; then
+	status=$(playerctl status)
+	if [ -n "$status" ]; then
+		if [[ "$status" == "Playing" ]]; then
+			icon=""
+		else
+			icon=""
+		fi
+	fi
 	title=$(playerctl metadata title)
 	artist=$(playerctl metadata artist)
-	output="${artist:+$artist - }${title}"
+	output="${icon:+$icon }${artist:+$artist - }${title} "
 fi
 
 if [[ -z "$output" ]]; then
