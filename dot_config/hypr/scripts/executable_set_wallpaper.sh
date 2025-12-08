@@ -22,3 +22,5 @@ ln -sf "$wallpaper" "$current_wallpaper"
 magick "$wallpaper[0]" -resize 1000x -strip "$settings_dir/wallpaper_preview.jpg"
 
 swww img "$wallpaper" --transition-fps 60 --transition-step 255 --transition-type "$transition"
+
+matugen image "$wallpaper"

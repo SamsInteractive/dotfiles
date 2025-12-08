@@ -1,4 +1,4 @@
-@theme "style.rasi"
+@theme "colors.rasi"
 
 configuration {
 	modi: "drun,window";
@@ -52,21 +52,21 @@ inputbar {
     padding:                     15px;
     border-radius:               10px;
     background-color:		     transparent;
-    text-color:			         @search;
+    text-color:			         @primary;
     children:                    [ "textbox-prompt-colon", "entry" ];
 }
 textbox-prompt-colon {
     expand:                      false;
     str:                         "  ";
     background-color:            inherit;
-    text-color:                  @search;
+    text-color:                  @primary;
 }
 entry {
     background-color:            inherit;
     text-color:                  inherit;
     cursor:                      text;
     placeholder:                 "Search";
-    placeholder-color:           @search;
+    placeholder-color:           @primary;
 }
 
 mode-switcher{

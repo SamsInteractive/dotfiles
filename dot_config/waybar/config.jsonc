@@ -57,10 +57,10 @@
             "warning": 25,
             "critical": 10
         },
-        "format": "{icon}",
+        "format": "{icon} {capacity}%",
         "format-charging": " {capacity}%",
         "format-plugged": " {capacity}%",
-        "format-alt": "{icon} {capacity}%",
+        "format-alt": "{icon}",
         "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
 		"tooltip-format": "{timeTo}\n@ {power}W"
     },

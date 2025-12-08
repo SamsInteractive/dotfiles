@@ -45,7 +45,7 @@ else
 			horizontal-align: 0.5;
 		}
 
-		window { height: 50%; width: 50%; }
+		window { height: 505px; width: 1000px; scale: true; }
 
 		/* old - element-icon { size: 64px; } */
 		'
