@@ -72,7 +72,7 @@ entry {
 mode-switcher{
     spacing:                     20px;
     background-color:            transparent;
-    text-color:                  #c4a8ff;
+    text-color:                  @primary;
 }
 button {
     padding:                     15px;
