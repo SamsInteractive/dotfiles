@@ -1,6 +1,5 @@
 [config]
 
-
 [templates.waybar]
 input_path = '~/.config/matugen/templates/waybar.css'
 output_path = '~/.config/waybar/colors.css'
@@ -12,6 +11,18 @@ input_path = '~/.config/matugen/templates/kitty.conf'
 output_path = '~/.config/kitty/colors.conf'
 post_hook = 'pkill -SIGUSR1 kitty'
 
+
 [templates.rofi]
 input_path = '~/.config/matugen/templates/rofi.rasi'
 output_path = '~/.config/rofi/colors.rasi'
+
+
+[templates.cava]
+input_path = '~/.config/matugen/templates/cava.ini'
+output_path = '~/.config/cava/themes/matugen'
+post_hook = "pkill -USR1 cava"
+
+
+[templates.btop]
+input_path = '~/.config/matugen/templates/btop.theme'
+output_path = '~/.config/btop/themes/matugen.theme'
