@@ -40,14 +40,15 @@
        // },
         {
 {{- $cpu_model := .cpu_model | default "other" -}}
-{{- if eq $cpu_model "other" -}}
+{{- if eq $cpu_model "other" }}
             "type": "cpu",
             "key": " {#cyan}│   CPU       │{$4}│{#keys}{$2}"
-{{- else -}}
+
+{{- else }}
 			"type": "custom",
             "key": " {#cyan}│   CPU       │{$4}│{#keys}{$2}",
             "format": "{{- $cpu_model -}}"
-{{- end -}}
+{{- end }}
         },
         {
             "type": "gpu",
@@ -82,14 +83,14 @@
         },
         {
 {{- $display := .display | default "other" -}}
-{{- if eq $display "other" -}}
+{{- if eq $display "other" }}
             "type": "display",
             "key": " {#green}│ 󰍹  Display   │{$4}│{#keys}{$2}"
-{{- else -}}
+{{- else }}
             "type": "custom",
             "key": " {#green}│ 󰍹  Display   │{$4}│{#keys}{$2}",
             "format": "{{- $display -}}"
-{{- end -}}
+{{- end }}
         },
        // {
            // "type": "gpu",
@@ -146,14 +147,14 @@
             "type": "battery",
             "key": " {#magenta}│ {icon}  Battery   │{$4}│{#keys}{$2}"
         },
-{{- if eq .chezmoi.hostname "SamsLaptop" -}}
+{{- if eq .chezmoi.hostname "SamsLaptop" }}
 		{
         "type": "command",
         "key": "{#magenta} │   Remaining │{$4}│{#keys}{$2}",
         "shell": "bash",
 		"text": "b=$(upower -e | awk '/battery/{print $1; exit}'); upower -i \"$b\" | awk -F: '/time to (empty|full)/{gsub(/^ +/,\"\",$2); n=$2; h=int(n); m=int((n-h)*60+0.5); if(h<2){color=\"\\033[1;31m\"}else{color=\"\\033[1;36m\"}; printf \"%s%d\\033[0m hours %s%d\\033[0m minutes %s\\n\", color, h, color, m, /empty/?\"remaining\":\"to full\"}'"
 		},
-{{- end -}}
+{{- end }}
 		{ 
             "type": "player",
             "key": " {#magenta}│ 󰥠  Audio     │{$4}│{#keys}{$2}",
@@ -167,3 +168,5 @@
             "key": " {#magenta}└──────────────┴{$1}┘{#keys}",
             "format": ""
         },
+	]
+}
