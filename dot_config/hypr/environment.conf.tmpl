@@ -31,3 +31,11 @@ env = ELECTRON_OZONE_PLATFORM_HINT,auto
 # ----- Other -----
 env = EGL_PLATFORM,wayland
 env = SDL_VIDEODRIVER,wayland
+{{- if eq .gpu "nvidia" -}}
+
+
+# ----- Nvidia Specific Settings -----
+env = GBM_BACKEND,nvidia-drm
+env = LIBVA_DRIVER_NAME,nvidia
+env = __GLX_VENDOR_LIBRARY_NAME,nvidia
+{{- end -}}
