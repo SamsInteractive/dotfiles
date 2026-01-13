@@ -16,12 +16,15 @@ exec-once = nm-applet --indicator
 exec-once = /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 # ----- General -----
+{{- if eq .class "personal" -}}
 exec-once = dropbox start
+{{- end -}}
 
 
 # ----- Audio -----
-exec-once = sh -c "easyeffects --gapplication-service & sleep 2 && easyeffects --load-preset 'Spotify' && easyeffects --load-preset 'Voice_Isolation'"
-
+{{- if eq .class "personal" -}}
+exec-once = sh -c "easyeffects --gapplication-service & sleep 2 && easyeffects --load-preset 'Spotify' && easyeffects --load-preset 'Voice_Isola>
+{{- end -}}
 
 
 # ------- Systemd XDG Auto-Start Generator -------
