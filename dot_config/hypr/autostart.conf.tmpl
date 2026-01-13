@@ -1,5 +1,9 @@
 # ---------- Autostart Configurations ----------
 
+# Use the file below to prevent overwrites when applying upstream dotfiles
+source = ~/.config/hypr/autostart.local.conf
+
+
 # ------- Execs -------
 
 # ----- Hyprland -----
@@ -16,15 +20,15 @@ exec-once = nm-applet --indicator
 exec-once = /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 # ----- General -----
-{{- if eq .class "personal" -}}
+{{- if or (eq .chezmoi.hostname "SamsPC") (eq .chezmoi.hostname "SamsLaptop") }}
 exec-once = dropbox start
-{{- end -}}
+{{- end }}
 
 
 # ----- Audio -----
-{{- if eq .class "personal" -}}
-exec-once = sh -c "easyeffects --gapplication-service & sleep 2 && easyeffects --load-preset 'Spotify' && easyeffects --load-preset 'Voice_Isola>
-{{- end -}}
+{{- if or (eq .chezmoi.hostname "SamsPC") (eq .chezmoi.hostname "SamsLaptop") }}
+exec-once = sh -c "easyeffects --gapplication-service & sleep 2 && easyeffects --load-preset 'Spotify' && easyeffects --load-preset 'Voice_Isolation'"
+{{- end }}
 
 
 # ------- Systemd XDG Auto-Start Generator -------

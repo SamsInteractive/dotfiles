@@ -39,15 +39,13 @@
           // "key": " {#cyan}│ {icon}  SWAP      │{$4}│{#keys}{$2}"
        // },
         {
-{{- $cpu_model := .cpu_model | default "other" -}}
-{{- if eq $cpu_model "other" }}
+{{- if hasKey . "cpu_model" }}
+            "type": "custom",
+            "key": " {#cyan}│   CPU       │{$4}│{#keys}{$2}",
+            "format": "{{- .cpu_model -}}"
+{{- else }}
             "type": "cpu",
             "key": " {#cyan}│   CPU       │{$4}│{#keys}{$2}"
-
-{{- else }}
-			"type": "custom",
-            "key": " {#cyan}│   CPU       │{$4}│{#keys}{$2}",
-            "format": "{{- $cpu_model -}}"
 {{- end }}
         },
         {
@@ -82,14 +80,13 @@
             "key": " {#green}│ {icon}  Session   │{$4}│{#keys}{$2}"
         },
         {
-{{- $display := .display | default "other" -}}
-{{- if eq $display "other" }}
-            "type": "display",
-            "key": " {#green}│ 󰍹  Display   │{$4}│{#keys}{$2}"
-{{- else }}
+{{- if hasKey . "display" }}
             "type": "custom",
             "key": " {#green}│ 󰍹  Display   │{$4}│{#keys}{$2}",
-            "format": "{{- $display -}}"
+            "format": "{{- .display -}}"
+{{- else }}
+            "type": "display",
+            "key": " {#green}│ 󰍹  Display   │{$4}│{#keys}{$2}"
 {{- end }}
         },
        // {

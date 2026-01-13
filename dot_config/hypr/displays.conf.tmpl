@@ -1,4 +1,4 @@
-{{- if eq .hostname "SamsPC" -}}
+{{- if eq .chezmoi.hostname "SamsPC" -}}
 # ---------- Desktop Configs ----------
 
 # ------- Display Settings -------
@@ -33,7 +33,7 @@ env = XCURSOR_SIZE,24
 env = HYPRCURSOR_SIZE,24
 env = GDK_SCALE,1
 
-{{- else if eq .hostname "SamsLaptop" -}}
+{{- else if eq .chezmoi.hostname "SamsLaptop" -}}
 # ---------- Laptop Configs ----------
 
 # ------- Display Settings -------
