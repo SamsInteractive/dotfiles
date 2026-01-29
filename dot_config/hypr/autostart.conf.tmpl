@@ -17,7 +17,7 @@ exec-once = swww-daemon --namespace swww
 exec-once = /usr/lib/pam_kwallet_init
 exec-once = /usr/bin/kwalletd6
 exec-once = nm-applet --indicator
-exec-once = /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec-once = systemctl --user start hyprpolkitagent
 
 # ----- General -----
 {{- if or (eq .chezmoi.hostname "SamsPC") (eq .chezmoi.hostname "SamsLaptop") }}
