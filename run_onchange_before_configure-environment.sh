@@ -28,6 +28,7 @@ all_packages=(
 	adw-gtk-theme
 	network-manager-applet
 	dolphin
+	hyprlock
 )
 
 echo "Dotfiles request packages/files to be installed for correct functionality."
