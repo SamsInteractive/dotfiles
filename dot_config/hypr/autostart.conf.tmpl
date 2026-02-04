@@ -27,7 +27,7 @@ exec-once = dropbox start
 
 # ----- Audio -----
 {{- if or (eq .chezmoi.hostname "SamsPC") (eq .chezmoi.hostname "SamsLaptop") }}
-exec-once = sh -c "easyeffects --gapplication-service & sleep 2 && easyeffects --load-preset 'Spotify' && easyeffects --load-preset 'Voice_Isolation'"
+exec-once = sh -c "taskset -c 0-15 easyeffects --gapplication-service & sleep 2 && easyeffects --load-preset 'Spotify' && easyeffects --load-preset 'Voice_Isolation'"
 {{- end }}
 
 
