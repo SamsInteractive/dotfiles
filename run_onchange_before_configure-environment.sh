@@ -27,8 +27,8 @@ all_packages=(
 	eza
 	adw-gtk-theme
 	network-manager-applet
-	dolphin
 	hyprlock
+	thunar
 )
 
 echo "Dotfiles request packages/files to be installed for correct functionality."
