@@ -3,11 +3,11 @@
 # Use the file below to prevent overwrites when applying upstream dotfiles
 source = ~/.config/hypr/autostart.local.conf
 
-
 # ------- Execs -------
 
 # ----- Hyprland -----
 exec-once = waybar
+exec-once = ~/.config/hypr/scripts/gen_main_ppi.sh
 
 # Fixes issues with firejail whitelisting by removing illegal socket name
 exec-once = swww-daemon --namespace swww
