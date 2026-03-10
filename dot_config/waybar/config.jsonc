@@ -102,7 +102,7 @@
         "on-click": "kitty nmtui", 
         "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
         "format": "{icon}",
-        "format-wifi": "{icon}",
+        "format-wifi": "{icon} {essid}",
         "format-ethernet" : "🖧",
         "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
         "tooltip-format-ethernet": "Ethernet\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
