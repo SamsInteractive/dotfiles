@@ -29,6 +29,11 @@ all_packages=(
 	network-manager-applet
 	hyprlock
 	thunar
+	qt6ct
+	gvfs
+	thunar-volman
+	tumbler
+	ffmpegthumbnailer
 )
 
 echo "Dotfiles request packages/files to be installed for correct functionality."
