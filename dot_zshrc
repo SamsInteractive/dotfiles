@@ -142,7 +142,7 @@ clear() {
 # --- Fastfetch ---
 # Start fastfetch or minimal fastfetch when running in Jedi Terminal
 run_fastfetch() {
-        if [[ "$TERMINAL_EMULATOR" == "JetBrains-JediTerm" ]]; then
+        if [[ "$TERMINAL_EMULATOR" == "JetBrains-JediTerm" || "$TERM_SMALL" == "true" ]]; then
                 fastfetch -c ~/.config/fastfetch/pycharm.jsonc
         else
 		# Changes fastfetch preset based on terminal size
