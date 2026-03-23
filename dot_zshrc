@@ -109,9 +109,9 @@ llt() {
 # --- BAT ---
 cat() {
 	if [[ $1 == "p" ]]; then
-		bat --paging=never "$2"
+		bat --style=plain --paging=never "$2"
 	else
-		bat "$1"
+		bat --style=plain "$1"
 	fi
 }
 
@@ -140,17 +140,17 @@ clear() {
 # ----- Helper Functions -----
 
 # --- Fastfetch ---
-# Start fastfetch or minimal fastfetch when running in Jedi Terminal
+# Start fastfetch and optionally load custom config based on environment
 run_fastfetch() {
-        if [[ "$TERMINAL_EMULATOR" == "JetBrains-JediTerm" || "$TERM_SMALL" == "true" ]]; then
-                fastfetch -c ~/.config/fastfetch/pycharm.jsonc
+        if [[ "$FF_PRESET" == "small-minimal" ]]; then
+                fastfetch -c ~/.config/fastfetch/small-minimal.jsonc
         else
 		# Changes fastfetch preset based on terminal size
                 if [ $(tput cols) -ge 106 ] && [ $(tput lines) -ge 22 ]; then
-			fastfetch
-		else
-			fastfetch -c ~/.config/fastfetch/small.jsonc
-		fi
+					fastfetch
+				else
+					fastfetch -c ~/.config/fastfetch/small.jsonc
+				fi
         fi
 }
 
