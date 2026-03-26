@@ -19,6 +19,7 @@ all_packages=(
 	neovim
 	swaync
 	starship
+	awww
 	nwg-look
 	matugen
 	hyprshot
