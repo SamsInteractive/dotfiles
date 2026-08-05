@@ -25,7 +25,7 @@
 	// ----- Custom Modules -----
 	"custom/launcher": {
 		"format": "󰣇  Arch",
-		"on-click": "sleep 0.1s; ~/.local/bin/rofi-toggle",
+		"on-click": "~/.config/hypr/scripts/util/rofi-toggle.sh",
 		"tooltip": false
 	},
 
