@@ -6,7 +6,11 @@
 --             /_/            /____/
 --
 
-local success, module = pcall(require, "conf/displays/" .. HOSTNAME)
+-- Source default config if not disabled in config.lua
+if not config.DISP_OVERRIDE then
+	require("conf/displays/default")
+end
 
-if not success then
+pcall(require, "conf/displays/" .. HOSTNAME)
 
+require("conf/displays/user")

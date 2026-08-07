@@ -5,6 +5,9 @@
 --  /_/ /_/\__, / .___/_/
 --        /____/_/
 --
+
+config = require("config")
+
 require("environment")
 require("applications")
 require("input")
