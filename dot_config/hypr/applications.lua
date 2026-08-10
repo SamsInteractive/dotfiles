@@ -6,10 +6,14 @@
 --       /_/   /_/
 --
 
-TERMINAL = "kitty"
-FILEMANAGER = "thunar"
-MENU = "~/.config/hypr/scripts/rofi-toggle"
-WINDOWMENU = MENU .. " window"
+if not config.APP_OVERRIDE then
+	TERMINAL = "kitty"
+	FILEMANAGER = "thunar"
+	MENU = "~/.config/hypr/scripts/rofi-toggle"
+	WINDOWMENU = MENU .. " window"
 
-hl.env("TERMINAL", "kitty")
-hl.env("XDG_TERMINAL_EMULATOR", "kitty")
+	hl.env("TERMINAL", "kitty")
+	hl.env("XDG_TERMINAL_EMULATOR", "kitty")
+end
+
+pcall(require, "conf/applications/user")
