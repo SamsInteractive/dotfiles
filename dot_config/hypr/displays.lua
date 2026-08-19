@@ -6,12 +6,8 @@
 --             /_/            /____/
 --
 
-local success
-
--- Attempt to source hostname config if enabled in config.lua
-if config.SOURCE_HOST then
-	success = pcall(require, "conf/displays/saved/" .. HOSTNAME)
-end
+-- Attempt to source hostname config
+local success = pcall(require, "conf/displays/saved/" .. HOSTNAME)
 
 -- Source default config if hostname config failed to be sourced or
 -- ALWAYS_SOURCE_DEFAULT is true. Will not run if overridden in config.lua

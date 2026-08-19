@@ -38,38 +38,14 @@ if handle then
 	handle:close()
 end
 
--- Variables
+-- Attempt to source hostname config
+local success = pcall(require, "conf/environment/saved/" .. HOSTNAME)
 
--- XDG Portal
-hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
-hl.env("XDG_SESSION_TYPE", "wayland")
-hl.env("XDG_SESSION_DESKTOP", "Hyprland")
-
--- QT
-hl.env("QT_QPA_PLATFORM", "wayland;xcb")
-hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", "1")
-hl.env("QT_AUTO_SCREEN_SCALE_FACTOR", "1")
-hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
-
--- Toolkit Backends
-hl.env("GDK_BACKEND", "wayland,x11,*")
-hl.env("CLUTTER_BACKEND", "wayland")
-
--- Mozilla
-hl.env("MOZ_ENABLE_WAYLAND", "1")
-
--- Ozone
-hl.env("OZONE_PLATFORM", "wayland")
-hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
-
--- Other
-hl.env("EGL_PLATFORM", "wayland")
-hl.env("SDL_VIDEODRIVER", "wayland")
-
-if GPU == "nvidia" then
-	-- Nvidia Specific Settings
-	hl.env("GBM_BACKEND", "nvidia-drm")
-	hl.env("LIBVA_DRIVER_NAME", "nvidia")
-	hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
-	hl.env("__GL_GSYNC_ALLOWED", "1")
+-- Source default config if hostname config failed to be sourced or
+-- ALWAYS_SOURCE_DEFAULT is true. Will not run if overridden in config.lua
+if (not success or config.ALWAYS_SOURCE_DEFAULT) and not config.ENV_OVERRIDE then
+	require("conf/environment/default")
 end
+
+-- Source any custom user configs
+pcall(require, "conf/environment/user")
