@@ -1,19 +1,27 @@
 # --- Path / Basics ---
 export ZSH="$HOME/.oh-my-zsh"
-export EDITOR="nano"
+export EDITOR="nvim"
 export PAGER="less -R"
+export MANPAGER="less -R"
+export PATH="$HOME/.local/bin:$PATH"
+
+export LESS_TERMCAP_mb=$'\e[1;31m'     # Begins blinking (Red)
+export LESS_TERMCAP_md=$'\e[1;36m'     # Begins bold text (Cyan)
+export LESS_TERMCAP_me=$'\e[0m'        # Ends bold/blinking
+export LESS_TERMCAP_so=$'\e[01;33m'    # Begins standout mode (Yellow)
+export LESS_TERMCAP_se=$'\e[0m'        # Ends standout mode
+export LESS_TERMCAP_us=$'\e[1;4;32m'   # Begins underline (Underlined Green)
+export LESS_TERMCAP_ue=$'\e[0m'        # Ends underline
 export PATH="$HOME/.local/bin:$PATH"
 
 
-
-# ----- Oh My Zsh -----
+# ------- Oh My Zsh -------
 
 # --- Theme ---
 ZSH_THEME=""
 
 
-
-# --- Plugins ---
+# ----- Plugins -----
 plugins=(
   git
 )
@@ -22,19 +30,15 @@ source "$ZSH/oh-my-zsh.sh"
 unset LS_COLORS
 
 
-
-
-# ----- User Plugins -----
+# ---- User Plugins -----
 
 # --- Starship ---
 eval "$(starship init zsh)"
 
 
-
 # --- FZF ---
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
-
 
 
 # --- zsh-completions ---
@@ -50,7 +54,6 @@ zstyle ':completion::complete:*' use-cache on
 zstyle ':completion::complete:*' cache-path ~/.zcompcache
 
 
-
 # --- Suggestions & syntax highlighting ---
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
@@ -59,14 +62,12 @@ source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
-
 # --- Zoxide setup ---
 eval "$(zoxide init zsh)"
 
 
 
-
-# ----- Terminal Configs -----
+# ------- Terminal Configs -------
 
 # --- History config ---
 HISTFILE=~/.histfile
@@ -79,12 +80,9 @@ setopt HIST_VERIFY
 setopt EXTENDED_HISTORY
 
 
-
 # --- Binding Configs ---
 bindkey -e
 bindkey '^H' backward-kill-word
-
-
 
 
 # ----- Functions & Aliasing -----
@@ -126,12 +124,12 @@ alias ..='z ..'
 # --- Clear ---
 # Run Fastfetch after clear unless "clear f"
 clear() {
-        if [[ $1 == "f" ]]; then
-                command clear
-        else
-                command clear
-                run_fastfetch
-        fi
+	if [[ $1 == "f" ]]; then
+		command clear
+    else
+		command clear
+		run_fastfetch
+	fi
 }
 
 
@@ -142,16 +140,16 @@ clear() {
 # --- Fastfetch ---
 # Start fastfetch and optionally load custom config based on environment
 run_fastfetch() {
-        if [[ "$FF_PRESET" == "small-minimal" ]]; then
-                fastfetch -c ~/.config/fastfetch/small-minimal.jsonc
-        else
+	if [[ "$FF_PRESET" == "small-minimal" ]]; then
+		fastfetch -c ~/.config/fastfetch/small-minimal.jsonc
+	else
 		# Changes fastfetch preset based on terminal size
-                if [ $(tput cols) -ge 106 ] && [ $(tput lines) -ge 22 ]; then
-					fastfetch
-				else
-					fastfetch -c ~/.config/fastfetch/small.jsonc
-				fi
-        fi
+		if [ $(tput cols) -ge 106 ] && [ $(tput lines) -ge 22 ]; then
+			fastfetch
+		else
+			fastfetch -c ~/.config/fastfetch/small.jsonc
+		fi
+	fi
 }
 
 
