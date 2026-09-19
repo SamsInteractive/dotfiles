@@ -5,7 +5,7 @@
 -- /_/  |_/_/ /_/_/_/ /_/ /_/\__,_/\__/_/\____/_/ /_/____/
 --
 -- Attempt to source hostname config
-local success = pcall(require, "conf/animations/saved/" .. HOSTNAME)
+local success = HOSTNAME and pcall(require, "conf/animations/saved/" .. HOSTNAME)
 
 -- Source default config if hostname config failed to be sourced or
 -- ALWAYS_SOURCE_DEFAULT is true. Will not run if overridden in config.lua

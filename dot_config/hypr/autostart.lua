@@ -6,7 +6,7 @@
 --
 
 -- Attempt to source hostname config
-local success = pcall(require, "conf/autostart/saved/" .. HOSTNAME)
+local success = HOSTNAME and pcall(require, "conf/autostart/saved/" .. HOSTNAME)
 
 -- Source default config if hostname config failed to be sourced or
 -- ALWAYS_SOURCE_DEFAULT is true. Will not run if overridden in config.lua

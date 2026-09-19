@@ -18,7 +18,7 @@ if handle then
 		HOSTNAME = nil
 	end
 
-	GPU = handle:read("l").lower()
+	GPU = handle:read("l")
 	if GPU == "" then
 		GPU = nil
 	elseif GPU then
@@ -39,7 +39,7 @@ if handle then
 end
 
 -- Attempt to source hostname config
-local success = pcall(require, "conf/environment/saved/" .. HOSTNAME)
+local success = HOSTNAME and pcall(require, "conf/environment/saved/" .. HOSTNAME)
 
 -- Source default config if hostname config failed to be sourced or
 -- ALWAYS_SOURCE_DEFAULT is true. Will not run if overridden in config.lua
