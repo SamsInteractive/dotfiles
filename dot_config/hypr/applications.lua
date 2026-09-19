@@ -14,8 +14,10 @@ local success = HOSTNAME and pcall(require, "conf/applications/saved/" .. HOSTNA
 if (not success or config.ALWAYS_SOURCE_DEFAULT) and not config.APP_OVERRIDE then
 	TERMINAL = "kitty"
 	FILEMANAGER = "thunar"
-	MENU = "~/.config/hypr/scripts/rofi-toggle"
-	WINDOWMENU = MENU .. " window"
+	MENU = "~/.config/hypr/scripts/util/rofi-toggle.sh"
+	POWERMENU = "~/.config/hypr/scripts/util/power_menu.sh"
+	LOCK = "hyprlock"
+	WALLMENU = "~/.config/hypr/scripts/wallpaper/wallpaper_switcher.sh"
 
 	hl.env("TERMINAL", "kitty")
 	hl.env("XDG_TERMINAL_EMULATOR", "kitty")
