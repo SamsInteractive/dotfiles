@@ -13,8 +13,10 @@ hl.bind(MAINMOD .. " + RETURN", hl.dsp.exec_cmd(TERMINAL))
 hl.bind(MAINMOD .. " + E", hl.dsp.exec_cmd(FILEMANAGER))
 hl.bind(MAINMOD .. " + SPACE", hl.dsp.exec_cmd(MENU))
 hl.bind(MAINMOD .. " + DELETE", hl.dsp.exec_cmd(POWERMENU))
+hl.bind(MAINMOD .. " + W", hl.dsp.exec_cmd(WALLMENU))
 
 hl.bind(MAINMOD .. " + L", hl.dsp.exec_cmd(LOCK))
+
 hl.bind(MAINMOD .. " + Q", hl.dsp.window.close())
 hl.bind(MAINMOD .. " + X", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(MAINMOD .. " + P", hl.dsp.window.pin({ action = "toggle" }))
@@ -22,17 +24,24 @@ hl.bind(MAINMOD .. " + P", hl.dsp.window.pin({ action = "toggle" }))
 -- F-Keys
 hl.bind("F11", hl.dsp.window.fullscreen({ action = "toggle" }))
 
+-- Utilities
+hl.bind(MAINMOD .. " + CTRL + S", hl.dsp.exec_cmd("hyprshot -m region --clipboard-only"))
+hl.bind(MAINMOD .. " + CTRL + SHIFT + S", hl.dsp.exec_cmd("hyprshot -m region"))
+
+-- Reload Settings
+hl.bind(MAINMOD .. " + R", hl.dsp.exec_cmd('sh -c "brightnessctl set 100%; pkill waybar; waybar"'))
+
 -- ---- Window Bindings ----
 
 -- Focus/Swap/Resize Window
 for i = 1, 4 do
-	local arrow = { "Left", "Right", "Down", "Up" }
-	local direction = { "l", "r", "d", "u" }
-	local resize = { 30, -30, 0, 0 }
+	local arrow = { "Left", "Right", "Up", "Down" }
+	local direction = { "l", "r", "u", "d" }
+	local resize = { -30, 30, 0, 0 }
 
 	hl.bind(MAINMOD .. " + " .. arrow[i], hl.dsp.focus({ direction = direction[i] }))
 
-	hl.bind(MAINMOD .. " + SHIFT + " .. arrow[i], hl.dsp.swap({ direction = direction[i] }))
+	hl.bind(MAINMOD .. " + SHIFT + " .. arrow[i], hl.dsp.window.swap({ direction = direction[i] }))
 
 	hl.bind(
 		MAINMOD .. " + CTRL + " .. arrow[i],
