@@ -15,5 +15,5 @@ git fetch --quiet
 
 behind="$(git rev-list --count "HEAD..$upstream")"
 if [[ "$behind" -gt 0 ]]; then
-	kitty --hold bash -lc '~/.config/hypr/scripts/update.sh'
+	kitty --hold bash -lc '~/.config/hypr/scripts/update/update.sh'
 fi

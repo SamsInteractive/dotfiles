@@ -54,6 +54,6 @@ else
 
 
 	if [ -n "$selected" ]; then
-    	$HOME/.config/hypr/scripts/set_wallpaper.sh "$selected"
+    	$HOME/.config/hypr/scripts/wallpaper/set_wallpaper.sh "$selected"
 	fi
 fi
