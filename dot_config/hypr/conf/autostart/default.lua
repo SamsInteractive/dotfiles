@@ -18,5 +18,5 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("systemctl --user start hyprpolkitagent")
 
 	-- Dotfile auto updater
-	hl.exec_cmd("~/.config/hypr/scripts/update_check.sh")
+	hl.exec_cmd("~/.config/hypr/scripts/update/update_check.sh")
 end)

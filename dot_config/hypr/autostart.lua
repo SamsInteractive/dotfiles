@@ -5,8 +5,8 @@
 -- /_/  |_\__,_/\__/\____/____/\__/\__,_/_/   \__/
 --
 
--- Attempt to source hostname config
-local success = HOSTNAME and pcall(require, "conf/autostart/saved/" .. HOSTNAME)
+-- Attempt to source hostname config if SOURCE_HOST is true in config.lua
+local success = config.SOURCE_HOST and HOSTNAME and pcall(require, "conf/autostart/saved/" .. HOSTNAME)
 
 -- Source default config if hostname config failed to be sourced or
 -- ALWAYS_SOURCE_DEFAULT is true. Will not run if overridden in config.lua

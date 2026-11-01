@@ -15,6 +15,14 @@ hl.monitor({
 	cm = "hdr",
 })
 
+-- Fallback for external displays
+hl.monitor({
+	output = "",
+	mode = "preferred",
+	position = "auto-right",
+	scale = 1,
+})
+
 -- Assign workspaces to correct displays
 hl.workspace_rule({ workspace = "1", monitor = "eDP-1", default = true })
 hl.workspace_rule({ workspace = "2", monitor = "eDP-1" })
