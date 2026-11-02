@@ -132,7 +132,8 @@ clear() {
 	fi
 }
 
-
+# --- Disable Annoying Blep Sound ---
+unsetopt beep
 
 
 # ----- Helper Functions -----
